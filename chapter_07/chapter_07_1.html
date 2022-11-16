@@ -1,0 +1,191 @@
+<!-- 소스코드 7-1-1 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            // HTML 태그를 쉽게 만들 수 있는 콜백 함수를 선언합니다.
+            const h1 = (text) => `<h1>${text}<h1>`
+        </script>
+        <script>
+            document.body.innerHTML += h1('1번째 script 태그')
+        </script>
+    </head>
+    <body>
+        <script>
+            document.body.innerHTML += h1('2번째 script 태그')
+        </script>
+        <h1>1번째 h1태그</h1>
+        <script>
+            document.body.innerHTML += h1('3번째 script 태그')
+        </script>
+        <h1>2번째 h1태그</h1>
+    </body>
+</html> -->
+
+<!-- 소스코드 7-1-2 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () =>{
+                const h1 = (text) => `<h1>${text}<h1>`
+                    document.body.innerHTML += h1(`DOMcontentLoaded 이벤트 발생`)
+            })
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 7-1-3 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const a = document.querySelector('#a')
+                const b = document.querySelector('#b')
+
+                a.textContent = '<h1>textContent 속성</h1>'
+                b.innerHTML = '<h1>innerHTML 속성</h1>'
+            })
+        </script>
+    </head>
+    <body>
+        <div id="a"></div>
+        <div id="b"></div>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 7-1-6 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const rects = document.querySelectorAll('.rect')
+
+                rects.forEach((rect, index) => {
+                    const width = (index + 1) * 100
+                    const src = `http://placekitten.com/${width}/250`
+                    rect.setAttribute('src', src)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <img class="rect" src="">
+        <img class="rect" src="">
+        <img class="rect" src="">
+        <img class="rect" src="">
+    </body>
+</html> -->
+
+<!-- 소스코드 7-1-7 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const divs =document.querySelectorAll('body > div')
+
+                divs.forEach((div, index) => {
+                    console.log(div, index)
+                    const val = index * 10
+                    div.style.height = `10px`
+                    div.style.backgroundColor = `rgba(${val},${val},${val})`
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </body>
+</html> -->
+
+<!-- 소스코드 7-1-8 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const header = document.createElement('h1')
+
+                header.textContent = '문서 객체 동적으로 생성하기'
+                header.setAttribute('data-custom', '사용자 정의 속성')
+                header.style.color = 'white'
+                header.style.backgroundColor = 'black'
+
+                document.body.appendChild(header)
+            })
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+
+<!-- 소스코드 7-1-8 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(() => {
+                    const h1 = document.querySelector('h1')
+
+                    h1.parentNode.removeChild(h1)
+                    // document.body.removeChild(h1)
+                }, 3000)
+            })
+        </script>
+    </head>
+    <body>
+        <hr>
+        <h1>제거 대상 문서 객체</h1>
+        <hr>
+    </body>
+</html>
+
