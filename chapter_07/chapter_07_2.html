@@ -1,0 +1,167 @@
+<!-- 소스코드 7-2-1 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMCotnetLoaded', () => {
+                const textarea = document.querySelector('textarea')
+                const h1 = document.querySelector('h1')
+
+                textarea.addEventListener('keyup', (event) => {
+                    const length = textarea.value.length
+                    h1.textContent = `글자 수: ${length}`
+                })
+            })    
+        </script>
+        
+    </head>
+    <body>
+        <h1></h1>
+        <textarea></textarea>
+    </body>
+</html> -->
+
+<!-- 소스코드 7-2-2 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () =>{
+                const h1 = document.querySelector('h1')
+                const print = (event) =>{
+                    let output = ''
+                    output += `alt: ${event.altKey}<br>`
+                    output += `ctrl: ${event.ctrlKey}<br>`
+                    output += `shift: ${event.shiftKey}<br>`
+                    output += `code: ${typeof(event.code) !== 'undefined' ? event.code : event.keyCode}<br>`
+                    h1.innerHTML = output
+                }
+
+                document.addEventListener('keydown', print)
+                document.addEventListener('keyup', print)
+            })
+        </script>
+        
+    </head>
+    <body>
+        <h1></h1>
+    </body>
+</html> -->
+
+<!-- 소스코드 7-2-4 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const input = document.querySelector('input')
+                const button = document.querySelector('button')
+                const p = document.querySelector('p')
+
+                button.addEventListener('click', ()=> {
+                    const inch = Number(input.value)
+
+                    if(isNaN(inch)){
+                        p.textContent = '숫자를 입력하세요'
+                        return
+                    }
+
+                    const cm = inch * 2.54
+                    p.textContent = `${cm}cm`
+                })
+            })
+        </script>
+        
+    </head>
+    <body>
+        <input type="text"> inch<br>
+        <button>계산</button>
+        <p></p>
+    </body>
+</html> -->
+
+<!-- 소스코드 7-2-6 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const select = document.querySelector('select')
+                const p = document.querySelector('p')
+
+                select.addEventListener('change', (event) => {
+                    const options = event.currentTarget.options
+                    const index = event.currentTarget.options.selectedIndex
+
+                    p.textContent = `선택: ${options[index].textContent}`
+                })
+            })
+        </script>
+        
+    </head>
+    <body>
+        <select name="" id="">
+            <option value="">떡볶이</option>
+            <option value="">김밥</option>
+            <option value="">튀김</option>
+            <option value="">순대</option>
+        </select>
+        <p>선택: 떡볶이</p>
+    </body>
+</html> -->
+
+<!-- 소스코드 7-2-7 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const select = document.querySelector('select')
+                const p = document.querySelector('p')
+
+                select.addEventListener('change', (event) => {
+                    const options = event.currentTarget.options
+                    const list = []
+
+                    for (const option of options){
+                        if (option.selected){
+                            list.push(option.textContent)
+                        }
+                    }
+
+                    p.textContent = `선택: ${list.join(',')}`
+                })
+            })
+        </script>
+        
+    </head>
+    <body>
+        <select multiple>
+            <option value="">떡볶이</option>
+            <option value="">김밥</option>
+            <option value="">튀김</option>
+            <option value="">순대</option>
+        </select>
+        <p>선택: 떡볶이</p>
+    </body>
+</html>
