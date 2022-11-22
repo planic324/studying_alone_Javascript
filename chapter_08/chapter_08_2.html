@@ -1,0 +1,90 @@
+<!-- 소스코드 8-2-1 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            try{
+                const array = new Array(99999999999999999)
+            } catch (exception){
+                console.log(exception)
+                console.log()
+                console.log( `예외 이름: ${exception}`)
+                console.log( `예외 메세지: ${exception.message}`)
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 8-2-2 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function divide(a, b){
+                if (b===0) {
+                    throw '0으로 나눌 수 없습니다.'
+                }
+                return a/b
+            }
+            console.log(divide(10,2))
+            console.log(divide(10,0))
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드8-2-3 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function test(object){
+                console.log(object.a + object.b)
+            }
+            test({})
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function test(object){
+                if(object.a !== undefined && object.b !== undefined){
+                    console.log(object.a + object.b)
+                } else{
+                    throw new Error("a 속성과 b 속성이 지정되어있지 않습니다.")
+                }
+            }
+            test({})
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
