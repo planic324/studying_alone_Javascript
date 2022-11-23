@@ -1,0 +1,216 @@
+<!-- 소스코드 9-1-1 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const students = []
+            students.push({이름: '구름', 국어: 88, 영어: 83, 수학: 100, 과학: 12})
+            students.push({이름: '별이', 국어: 82, 영어: 83, 수학: 10, 과학: 65})
+            students.push({이름: '겨울', 국어: 84, 영어: 82, 수학: 40, 과학: 61})
+            students.push({이름: '바다', 국어: 81, 영어: 23, 수학: 54, 과학: 62})
+            students.push({이름: '하늘', 국어: 83, 영어: 63, 수학: 66, 과학: 65})
+
+            // 출력
+            alert(JSON.stringify(students, null, 2))
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-1-2 -->
+<!-- 평균값 구하기 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const students = []
+            students.push({이름: '구름', 국어: 88, 영어: 83, 수학: 100, 과학: 12})
+            students.push({이름: '별이', 국어: 82, 영어: 83, 수학: 10, 과학: 65})
+            students.push({이름: '겨울', 국어: 84, 영어: 82, 수학: 40, 과학: 61})
+            students.push({이름: '바다', 국어: 81, 영어: 23, 수학: 54, 과학: 62})
+            students.push({이름: '하늘', 국어: 83, 영어: 63, 수학: 66, 과학: 65})
+
+            let outPut = '이름\t총점\t평균\n'
+            for (const s of students){
+                const sum = s.국어 + s.영어 + s.수학 + s.과학
+                const average = sum/4
+                outPut += `${(s.이름)}\t${sum}점\t${average}점\n`
+            }
+            console.log(outPut)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-1-3 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const students = []
+            students.push({이름: '구름', 국어: 88, 영어: 83, 수학: 100, 과학: 12})
+            students.push({이름: '별이', 국어: 82, 영어: 83, 수학: 10, 과학: 65})
+            students.push({이름: '겨울', 국어: 84, 영어: 82, 수학: 40, 과학: 61})
+            students.push({이름: '바다', 국어: 81, 영어: 23, 수학: 54, 과학: 62})
+            students.push({이름: '하늘', 국어: 83, 영어: 63, 수학: 66, 과학: 65})
+
+            // 객체를 처리하는 함수를 선언합니다.
+            function getSumOf(student){
+                return student.국어 + student.영어 + student.수학 + student.과학
+            }
+
+            function getAverageOf(student){
+                return getSumOf(student)/4
+            }
+
+            // 출력
+            let outPut = '이름\t총점\t평균\n'
+            for (const s of students){
+                outPut += `${(s.이름)}\t${getSumOf(s)}점\t${getAverageOf(s)}점\n`
+            }
+            console.log(outPut)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-1-4 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            const students = []
+            students.push({이름: '구름', 국어: 88, 영어: 83, 수학: 100, 과학: 12})
+            students.push({이름: '별이', 국어: 82, 영어: 83, 수학: 10, 과학: 65})
+            students.push({이름: '겨울', 국어: 84, 영어: 82, 수학: 40, 과학: 61})
+            students.push({이름: '바다', 국어: 81, 영어: 23, 수학: 54, 과학: 62})
+            students.push({이름: '하늘', 국어: 83, 영어: 63, 수학: 66, 과학: 65})
+
+            // 객체를 처리하는 함수를 선언합니다.
+            for(const student of students){
+                student.getSum = function(){
+                return this.국어 + this.영어 + this.수학 + this.과학
+            }
+
+                student.getAverage = function(){
+                    return this.getSum() / 4
+                }
+            }            
+
+            // 출력
+            let outPut = '이름\t총점\t평균\n'
+            for (const s of students){
+                outPut += `${(s.이름)}\t${s.getSum()}점\t${s.getAverage()}점\n`
+            }
+            console.log(outPut)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-1-5 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function creatStudent(이름, 국어, 영어, 수학, 과학) {
+                return{
+                    이름: 이름,
+                    국어: 국어,
+                    영어: 영어,
+                    수학: 수학,
+                    과학: 과학,
+                    
+                    // 메소드 선택
+                    getSum() {
+                        return this.국어 + this.영어 + this.수학 + this.과학
+                    },
+                    getAverage(){
+                        return this.getSum() / 4
+                    },
+                    toString(){
+                        return `${this.이름}\t${this.getSum()}점\t${this.getAverage()}점\n`
+                    }
+                }
+                
+            }
+            // 객체선언
+            const students = []
+            students.push(creatStudent('구름', 88, 83, 100, 12))
+            students.push(creatStudent('하늘', 88, 83, 100, 12))
+            students.push(creatStudent('별', 88, 83, 100, 12))
+            students.push(creatStudent('바다', 88, 83, 100, 12))
+            students.push(creatStudent('태양', 88, 83, 100, 12))
+
+            // 출력
+            let outPut = '이름\t총점\t평균\n'
+            for (const s of students){
+                outPut += s.toString()
+            }
+            console.log(outPut)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-1-6 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            class Student{
+
+            }
+            // 학생을 선언한다.
+            const student = new Student()
+
+            // 학생 리스트를 선언한다.
+            const students = [
+                new students(),
+                new students(),
+                new students(),
+                new students(),
+                new students(),
+                new students()
+            ]
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
