@@ -1,0 +1,188 @@
+<!-- 소스코드 9-2-3 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            class Ractangle {
+                constructor (width, height){
+                    this.width = width
+                    this.height = height
+                }
+
+                // 둘레를 구하는 메소드
+                getPerimeter () {
+                    return 2 * (this.width + this.height)
+                }
+
+                // 넓이를 구하는 메소드
+                getArea () {
+                    return this.width * this.height
+                }
+            }
+
+            // 정사각형 클래스
+            class Sqare extends Ractangle {
+                constructor (length){
+                    super(length, length)
+                }
+            }
+
+            // 클래스 사용하기
+            const sqare = new Sqare(10, 20)
+            console.log(`둘레 ${sqare.getPerimeter()}`)
+            console.log(`넓이 ${sqare.getArea()}`)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-2-4 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            class Ractangle {
+                constructor (width, height){
+                    this.width = width
+                    this.height = height
+                }
+
+                // 둘레를 구하는 메소드
+                getPerimeter () {
+                    return 2 * (this.width + this.height)
+                }
+
+                // 넓이를 구하는 메소드
+                getArea () {
+                    return this.width * this.height
+                }
+            }
+
+            // 정사각형 클래스
+            class Sqare extends Ractangle {
+                #length // 이 위치에 해당 속성을 prviate 속성으로 사용하겠다고 미리 선언합니다.
+            
+                constructor (length){
+                    if(length <= 0){
+                        throw '길이는 0보다 커야됩니다.'
+                    }
+                    this.length = length
+                }
+            }
+
+            // 클래스 사용하기
+            const sqare = new Sqare(-10)
+            sqare = -10
+            console.log(`둘레 ${sqare.getPerimeter()}`)
+            console.log(`넓이 ${sqare.getArea()}`)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-2-9 -->
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            // 정사각형 만들기
+            class Sqare {
+                #length
+
+                constructor (length){
+                    this.setLength (length)
+                }
+
+                setLength (value){
+                    if(value <= 0){
+                        throw '길이는 0보다 큰 숫자여야 됩니다.'
+                    }
+                    this.#length = value
+                }
+
+                getLength (value){
+                    return this.#length
+                }
+
+                getPerimeter () {return 4 * this.#length}
+                getArea () {return this.#length * this.#length}
+            }
+
+            // 클래스 사용하기
+            const sqare = new Sqare(10)
+            console.log(`둘레 ${sqare.getPerimeter()}`)
+            console.log(`넓이 ${sqare.getArea()}`)
+
+            sqare.setLength(-10)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html> -->
+
+<!-- 소스코드 9-2-10 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            // 정사각형 만들기
+            class Square {
+                #length
+
+                constructor (length){
+                    this.setLength = length
+                }
+
+                get length() {
+                    return this.#length
+                }
+                
+                get getPerimeter() {
+                    return this.#length *4
+                }
+
+                get area() {
+                    return this.#length * this.#length
+                }
+
+                set length (length){
+                    if (length <= 0) {
+                        throw '0 이상 숫자를 입력하세요'
+                    } 
+                    this.#length = length
+                }
+            }
+
+            // 클래스 사용하기
+            const SquareA = new Square(10)
+            console.log(`한변길이 ${SquareA.length}`)
+            console.log(`둘레 ${SquareA.getPerimeter}`)
+
+            // const sqareB = new Sqare(-10)
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
